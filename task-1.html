@@ -38,10 +38,12 @@
 
 const div = {
     tagName: 'div',
+
     attrs: [ {
         name: 'id',
         value: 'my-div',
     } ],
+    
     children: [ {
         tagName: 'h1',
         attrs: [],
@@ -52,12 +54,16 @@ const div = {
 
 function myfunction (object) {
 
+	// create the element
+	const parentEl = document.createElement(object.tagName)
 
-	const divEl = document.createElement(object.tagName)
+	// set attribute
 	divEl.setAttribute('id','my-div')
 
+	// create children
 	const childrenEl = document.createElement(object.children[0].tagName)
 
+	// append children to div
 	divEl.appendChild(childrenEl)	
 
 	console.log(divEl)
