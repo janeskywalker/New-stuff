@@ -1,0 +1,86 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task-1</title>
+
+		<style>
+
+	</style>
+</head>
+
+
+
+<body>
+
+
+<script>
+
+
+// Write a function that takes an object that looks like this...
+
+
+// And returns an actual DOM element (using document.createElement) that is described by the object. In this case it is just a normal div.
+
+// the attrs property is used to pass in an array of objects that defined attribute values (added to element using element.setAttribute).
+
+
+// the children property is an array of other objects that describe elements...
+
+
+
+const div = {
+    tagName: 'div',
+    attrs: [ {
+        name: 'id',
+        value: 'my-div',
+    } ],
+    children: [ {
+        tagName: 'h1',
+        attrs: [],
+        children: []
+    } ]
+}
+
+
+function myfunction (object) {
+
+
+	const divEl = document.createElement(object.tagName)
+	divEl.setAttribute('id','my-div')
+
+	const childrenEl = document.createElement(object.children[0].tagName)
+
+	divEl.appendChild(childrenEl)	
+
+	console.log(divEl)
+	console.log(childrenEl)
+	return divEl
+}
+
+myfunction(div)
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
